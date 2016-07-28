@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <h1>{{ msg }}</h1>
-  </div>
-</template>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Blog</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li v-link-active><a v-link="{ path: '/' }">Home</a></li>
+          <li v-link-active><a v-link="{ path: '/login' }">Login</a></li>
+            <li v-link-active><a v-link="{ path: '/addPost' }">AddPost</a></li>
+            </ul>
+          </div>
+        </nav>
+        <br/>
+        <div class="container">
+          <router-view></router-view>
+        </div>
+      </div>
+    </template>
 
 <script>
 export default {
   data () {
     return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
       msg: 'Hello Vue!'
     }
   }
